@@ -139,6 +139,8 @@ def imaqDispose(obj):
     if getattr(obj, "value", None) is not None:
         _imaqDispose(obj)
         obj.value = None
+    if isinstance(obj, int):
+        _imaqDispose(obj)
 
 #
 # Enumerated Types
